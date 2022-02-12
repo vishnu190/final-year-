@@ -9,10 +9,10 @@ app=Flask(__name__)
 app.secret_key=os.urandom(24) # 24 character long 1:.8:00
 
 ### making a connection object ###########
-conn = c.connect(host="sql6.freesqldatabase.com",
-                             user="sql6468217",
-                             passwd ="wMZNwr87mN",
-                             database ="sql6468217")
+conn = c.connect(host="ec2-44-194-113-156.compute-1.amazonaws.com",
+                             user="ggbqhuevmlwnrr",
+                             passwd ="0ced3e9d0c6b967a3b1a747bb4cfad1ca561c6abee91a4448378da4eb31add3c",
+                             database ="d9r44556mhfpsv")
 ######## establish communication with server ##############
 cursor = conn.cursor()
 

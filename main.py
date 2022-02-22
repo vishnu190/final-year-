@@ -6,15 +6,14 @@ import mysql.connector as c
 app=Flask(__name__)
 
 # Creating secret key########
-app.secret_key=os.urandom(24) # 24 character long 1:.8:00
-
+app.secret_key = os.urandom(24) # 24 character long 1:.8:00
+###########################################################
+# postgres://rlihmksb:HSxbQ8FrzhRDIwwVA5xnub52dJa38iQ1@jelani.db.elephantsql.com/rlihmksb
 ### making a connection object ###########
-conn = c.connect(host="john.db.elephantsql.com",
-                             user="wjuvqcxq",
-                             passwd ="tTjXeeBd10WYDn_ojYhvsp-AqZUCbUsH",
-                             database ="wjuvqcxq")
-
-
+conn = c.connect(host="remotemysql.com",
+                             user="YquITD7IKd",
+                             passwd ="FLQX3E5ycf",
+                             database ="YquITD7IKd")
 ######## establish communication with server ##############
 cursor = conn.cursor()
 
@@ -58,7 +57,7 @@ def add_users():
 
     cursor.execute("""INSERT INTO `final_project` (`user_id`, `name`, `email`,`password`)
     VALUES ('','{}','{}','{}') """.format(name, email, password))
-    conn.commit() # commit for relational database during transactions
+    conn.commit() # commit for relational database during transactions >>> ACID property
 
     cursor.execute(""" SELECT * FROM `final_project` WHERE `email` LIKE '{}'""". format(email))
     myuser = cursor.fetchall()

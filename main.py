@@ -56,7 +56,7 @@ def add_users():
     password = request.form.get('upassword')
 
     cursor.execute("""INSERT INTO `final_project` (`user_id`, `name`, `email`,`password`)
-    VALUES ('','{}','{}','{}') """.format(name, email, password))
+    VALUES (0,'{}','{}','{}') """.format(name, email, password))
     conn.commit() # commit for relational database during transactions >>> ACID property
 
     cursor.execute(""" SELECT * FROM `final_project` WHERE `email` LIKE '{}'""". format(email))

@@ -14,7 +14,7 @@ conn = c.connect(host="remotemysql.com",
                              user="YquITD7IKd",
                              passwd ="FLQX3E5ycf",
                              database ="YquITD7IKd")
-######## establish communication with server ##############
+######## establish communication with server ######
 cursor = conn.cursor()
 
 @app.route('/') # DECORATOR  for creating URLs
